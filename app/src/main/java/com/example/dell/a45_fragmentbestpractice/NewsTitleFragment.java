@@ -36,10 +36,9 @@ public class NewsTitleFragment extends Fragment {
         newsTitleRecycleView.setAdapter(adapter);
         return view;
     }
-
     private List<News> getNews() {
         List<News> newsList = new ArrayList<>();
-        for (int i = 1; i<= 50; i++) {
+        for (int i = 1; i <= 50; i++) {
             News news = new News();
             news.setTitle("This is new title" + i);
             news.setContent(getRandomLengthContent("This is news content" + i + "."));
@@ -47,6 +46,7 @@ public class NewsTitleFragment extends Fragment {
         }
         return newsList;
     }
+
     private String getRandomLengthContent(String content) {
         Random random = new Random();
         int length = random.nextInt(20) + 1;
@@ -57,6 +57,7 @@ public class NewsTitleFragment extends Fragment {
         }
         return builder.toString();
     }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -68,6 +69,9 @@ public class NewsTitleFragment extends Fragment {
             isTwoPane = false;
         }
     }
+
+
+
 
     class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
@@ -83,6 +87,7 @@ public class NewsTitleFragment extends Fragment {
         }
 
         public NewsAdapter(List<News> newsList) {
+
             mNewsList = newsList;
         }
 
@@ -118,6 +123,7 @@ public class NewsTitleFragment extends Fragment {
 
         @Override
         public int getItemCount() {
+
             return mNewsList.size();
         }
 

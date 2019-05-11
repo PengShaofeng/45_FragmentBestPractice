@@ -23,6 +23,8 @@ public class NewsContentActivity extends AppCompatActivity {
         String newsTitle = getIntent().getStringExtra("news_title");
         //获取出传入的新闻内容
         String newsContent = getIntent().getStringExtra("news_content");
+
+
         NewsContentFragment newsContentFragment = (NewsContentFragment)
                 getSupportFragmentManager().findFragmentById(R.id.news_content_fragment);
         //刷新NewsContent-Fragment界面
